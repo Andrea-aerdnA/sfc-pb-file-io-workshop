@@ -2,93 +2,90 @@
 
 Welcome to the File IO lab!
 
-In this challenge you'll have a runner file (`main.py`) that keeps track of
-emails and uses an `Email` class and a `DataLoader` class. The runner and the
-`Email` class are already implemented for you. Your job is to implement the
-`DataLoader` class so that the runner works as expected. Below is a sample of a
-session with the runner class working for you to use as a test case:
+In this challenge you will build a simple contact manager. A `main.py` main
+program file has already been completed, you just need to implement the
+methods in the `ContactManager` class in `contact_manager.py`. At the bottom
+of this page is a sample session with contact manager program.
 
 ```sh
-15:37:55 ~/unit-1-file-io-lab $ python main.py
+~/unit-1-file-io-lab $ python main.py
 
 Options:
-1. Display emails
-2. Add new email
-3. Update email
-4. Delete email
+1. Display contacts
+2. Add new contact
+3. Update contact
+4. Delete contact
 5. Exit
 Enter your choice: 1
-Emails:
+Contacts:
 
 Options:
-1. Display emails
-2. Add new email
-3. Update email
-4. Delete email
+1. Display contacts
+2. Add new contact
+3. Update contact
+4. Delete contact
 5. Exit
 Enter your choice: 2
-Enter email ID: 1
-Enter sender: me@email.com
-Enter recipient: you@email.com
-Enter subject: file io
-Enter body: daaannnngggg! you got this whole thing working! nice work
+Enter contact ID: 1
+Enter name: joe
+Enter email: joe@bro.com
+Enter phone: 111-111-1111
 
 Options:
-1. Display emails
-2. Add new email
-3. Update email
-4. Delete email
+1. Display contacts
+2. Add new contact
+3. Update contact
+4. Delete contact
 5. Exit
 Enter your choice: 1
-Emails:
-{'id': '1', 'sender': 'me@email.com', 'recipient': 'you@email.com', 'subject': 'file io', 'body': 'daaannnngggg! you got this whole thing working! nice work'}
+Contacts:
+{'id': '1', 'name': 'joe', 'email': 'joe@bro.com', 'phone': '111-111-1111'}
 
 Options:
-1. Display emails
-2. Add new email
-3. Update email
-4. Delete email
+1. Display contacts
+2. Add new contact
+3. Update contact
+4. Delete contact
 5. Exit
 Enter your choice: 3
-Enter the email ID of the email to update: 1
-Enter new sender: me@email.com
-Enter new recipient: you@email.com
-Enter new subject: file io
-Enter new body: daaannnngggg! you got this whole thing working! nice work!!!!!!!
+Enter the ID of the contact to update: 1
+Enter name: joseph
+Enter email: joseph@bro.com
+Enter phone: 111-111-1111
 
 Options:
-1. Display emails
-2. Add new email
-3. Update email
-4. Delete email
+1. Display contacts
+2. Add new contact
+3. Update contact
+4. Delete contact
 5. Exit
 Enter your choice: 1
-Emails:
-{'id': '1', 'sender': 'me@email.com', 'recipient': 'you@email.com', 'subject': 'file io', 'body': 'daaannnngggg! you got this whole thing working! nice work!!!!!!!'}
+Contacts:
+{'id': '1', 'name': 'joseph', 'email': 'joseph@bro.com', 'phone': '111-111-1111'}
 
 Options:
-1. Display emails
-2. Add new email
-3. Update email
-4. Delete email
+1. Display contacts
+2. Add new contact
+3. Update contact
+4. Delete contact
 5. Exit
 Enter your choice: 4
-Enter the email ID of the email to delete: 1
+Enter the ID of the contact to delete: 1
 
 Options:
-1. Display emails
-2. Add new email
-3. Update email
-4. Delete email
+1. Display contacts
+2. Add new contact
+3. Update contact
+4. Delete contact
 5. Exit
 Enter your choice: 1
-Emails:
+Contacts:
 
 Options:
-1. Display emails
-2. Add new email
-3. Update email
-4. Delete email
+1. Display contacts
+2. Add new contact
+3. Update contact
+4. Delete contact
 5. Exit
 Enter your choice: 5
 Exiting program.

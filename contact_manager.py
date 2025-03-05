@@ -7,7 +7,7 @@ class ContactManager:
 
     def load_contacts(self):
         return self._load_contacts_from_file()
-    
+
     def add_contact(self, contact):
         contacts = self.load_contacts()
         contacts.append(contact)

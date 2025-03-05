@@ -1,65 +1,82 @@
 from contact_manager import ContactManager
 
 
-def display_contacts(contacts):
-    print("Contacts:")
-    for contact in contacts:
-        print(str(contact))
-
 def main():
     contact_manager = ContactManager()
 
     while True:
-        print("\nOptions:")
-        print("1. Display contacts")
-        print("2. Add new contact")
-        print("3. Update contact")
-        print("4. Delete contact")
-        print("5. Exit")
+        menu_choice = display_menu()
 
-        choice = input("Enter your choice: ")
+        if menu_choice == "1":
+            display_contacts(contact_manager)
 
-        if choice == "1":
-            contacts = contact_manager.load_contacts()
-            display_contacts(contacts)
+        elif menu_choice == "2":
+            add_new_contact(contact_manager)
 
-        elif choice == "2":
-            id = input("Enter contact ID: ")
-            name = input("Enter name: ")
-            email = input("Enter email: ")
-            phone = input("Enter phone: ")
-            contact = {
-                "id": id,
-                "name": name,
-                "email": email,
-                "phone": phone
-            }
-            contact_manager.add_contact(contact)
+        elif menu_choice == "3":
+            update_contact(contact_manager)
 
-        elif choice == "3":
-            id = input("Enter the ID of the contact to update: ")
-            name = input("Enter name: ")
-            email = input("Enter email: ")
-            phone = input("Enter phone: ")
-            contact_to_update = {
-                "id": id,
-                "name": name,
-                "email": email,
-                "phone": phone
-            }
-            contact_manager.update_contact(contact_to_update)
+        elif menu_choice == "4":
+            delete_contact(contact_manager)
 
-
-        elif choice == "4":
-            id = input("Enter the ID of the contact to delete: ")
-            contact_manager.delete_contact(id)
-
-        elif choice == "5":
+        elif menu_choice == "5":
             print("Exiting program.")
             break
 
         else:
             print("Invalid choice. Please try again.")
+
+
+def display_menu():
+    print("\nOptions:")
+    print("1. Display contacts")
+    print("2. Add new contact")
+    print("3. Update contact")
+    print("4. Delete contact")
+    print("5. Exit")
+    choice = input("Enter your choice: ")
+    return choice
+
+
+def display_contacts(contact_manager):
+    contacts = contact_manager.load_contacts()
+    print("Contacts:")
+    for contact in contacts:
+        print(str(contact))
+
+
+def add_new_contact(contact_manager):
+    id = input("Enter contact ID: ")
+    name = input("Enter name: ")
+    email = input("Enter email: ")
+    phone = input("Enter phone: ")
+    contact = {
+        "id": id,
+        "name": name,
+        "email": email,
+        "phone": phone
+    }
+    contact_manager.add_contact(contact)
+
+
+def update_contact(contact_manager):
+    id = input("Enter the ID of the contact to update: ")
+    name = input("Enter name: ")
+    email = input("Enter email: ")
+    phone = input("Enter phone: ")
+    contact_to_update = {
+        "id": id,
+        "name": name,
+        "email": email,
+        "phone": phone
+    }
+    contact_manager.update_contact(contact_to_update)
+
+
+def delete_contact(contact_manager):
+    id = input("Enter the ID of the contact to delete: ")
+    contact_manager.delete_contact(id)
+
 
 if __name__ == "__main__":
     main()

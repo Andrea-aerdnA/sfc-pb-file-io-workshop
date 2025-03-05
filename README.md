@@ -7,6 +7,18 @@ program file has already been completed, you just need to implement the
 methods in the `ContactManager` class in `contact_manager.py`. At the bottom
 of this page is a sample session with contact manager program.
 
+## Some notes
+
+If you get any `json.decoder.JSONDecodeError` errors it is because your
+`data.json` file got corrupted. Update your `data.json` file to contain
+just this:
+
+```json
+[]
+```
+
+## Sample program run
+
 ```sh
 ~/unit-1-file-io-lab $ python main.py
 

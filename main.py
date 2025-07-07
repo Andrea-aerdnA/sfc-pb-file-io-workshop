@@ -3,6 +3,9 @@ from contact_manager import ContactManager
 
 def main():
     contact_manager = ContactManager()
+    # We should call load_contacts before we show the menu
+    # so they are loaded at the beginning of our program
+    contact_manager.load_contacts()
 
     while True:
         menu_choice = display_menu()

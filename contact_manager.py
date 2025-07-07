@@ -45,7 +45,8 @@ class ContactManager:
     # from outside the class, but are likely useful in the methods above.
     def _load_contacts_from_file(self) -> list[dict[str, str]]:
         """
-        Loads contacts from a JSON file and converts them to a dictionary
+        Loads contacts from a JSON file and converts them to a list of
+        dictionaries
 
         Bonus: What should happen if the file isn't there?
                What should happen if the file has invalid JSON in it?
@@ -54,7 +55,7 @@ class ContactManager:
 
     def _save_contacts_to_file(self, contacts: list[dict[str, str]]) -> None:
         """
-        Converts a dictionary into JSON and writes it to a file
+        Converts a list of dictionaries into JSON and writes it to a file
 
         Bonus: What happens if the file can't be written to?
                Check the list of dictionaries for valid data before

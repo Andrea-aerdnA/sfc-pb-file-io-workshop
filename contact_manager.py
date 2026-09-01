@@ -13,14 +13,10 @@ class ContactManager:
 
     def __init__(self, file="data.json"):
         self.file = file
-        # _contacts is protected because we don't want to
-        # access it directly from main.py
-        self._contacts = []
+        self.contacts = []
 
     def load_contacts(self):
-        """Public method to load the contacts into the class
-
-        Loads contacts from a JSON file and converts them to a list of
+        """Loads contacts from a JSON file and converts them to a list of
         dictionaries
 
         Bonus: What should happen if the file isn't there?
